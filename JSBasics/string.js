@@ -20,7 +20,7 @@ console.log(gameName.__proto__);
 console.log(gameName.length);
 //method of proto but used it direct 
 console.log(gameName.toUpperCase());
-//character positon  on which postion which char 
+//character positon  on which postion which char  show char 
 console.log(gameName.charAt(2));
 //index of character 
 console.log(gameName.indexOf('m'));
