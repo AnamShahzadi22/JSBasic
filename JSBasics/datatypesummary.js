@@ -10,6 +10,7 @@ const isLoggedIn = false;//bool
 const outsideTemp = null;//null
 let userEmail = "amkkdk";//string
 let userAddress;  //undefined
+//use symbol.for if we use same symbol no uniqness
 let userId =Symbol('123'); // Symbol normally used in react
 let anotherId = Symbol('123')
 //both value are same but with symbol not return same it provide unique value 
