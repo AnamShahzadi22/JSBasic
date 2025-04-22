@@ -41,6 +41,35 @@ const myFunction = function(){
 }
 console.log(typeof(myFunction)); //function /function obj
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Memory Stack  used in primitve type  copy v into another v 
+// and Heap  use in non primitve type   reference of originl val
+//stack concept copy whole into another variable  deal with copy 
+let myYouTubename = "abc";
+let anotherName = myYouTubename;
+anotherName = "def"
+console.log( anotherName);
+console.log(myYouTubename)
+
+//Heap Memory with Reference type val 
+//not give copy in it original val reference milta h  
+let userOne ={
+    email: "user@gmail.com",
+    upid: "userkdkd"
+}
+//reference of userone 
+
+let userTwo = userOne;
+//both refer  same user one and two
+//changing in one change done also in two
+//changes done in original val 
+userTwo.email = "abc6";
+console.log(userOne.email);
+console.log(userTwo.email);
+
+
+
 
 
 
