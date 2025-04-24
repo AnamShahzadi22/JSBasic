@@ -78,14 +78,18 @@ console.log(Math.min(4,2,6,5)); //2
 console.log(Math.random()); //random value every time  (bw 0 to 1 )
 //between range value  in prob statement //dice 1 to 6 
 
-console.log((Math.random()  * 10) +1); //min value 1 not 0 
-///+1 avoid 0 case
+console.log((Math.random()  * 10) +1);      
+//min value 1 not 0 
+///+1 avoid 0
 //trick  if range define 
-const min = 10;
-const max =20;
-//max - min range define 
+const min = 20;
+const max =30;
+//max - min range define   20 to 30 
 
 console.log(Math.floor((Math.random()  * (max-min+1)+min)));
+//Or 
+
+console.log(Math.floor((Math.random()  * (max+1-min)+min)));
 
 
 
