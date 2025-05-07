@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Relation Parenet Child Traversing </title>
+</head>
+
+<body style="background-color:#212121; color: #ffffff">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+
+    </div>
+</body>
+<script>
+    //achive tarrget  parent class seelct and then access its child
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    //children in parent all html collection of child
+    //every element have children and children also have parent
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
+    //classic fror loop run on html collection
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+
+    }
+    parent.children[1].style.color = "orange";
+    //targeting element
+    //class alo have more property
+    //first element child first element return and from last lst return
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+    //use .innerHtml to get orignal value 
+    //move child to parent also method select first elemet with class day
+    const dayOne =document.querySelector('.day');
+     console.log(dayOne);
+     //access parent from child used parent elemetn its parent access
+     //full div of parent element
+     console.log(dayOne.parentElement);
+     //next element mean its sibling tuesday full div of next sibling
+     console.log(dayOne.nextElementSibling);
+     //give a complex tree strucutre of child  line break also node element
+     //every break  also count as node element  tell us complex tree strucutre
+    //one line break count   if more break then count only one before next element comment also counted as chilnode
+
+    console.log("NODES: ", parent.childNodes);
+</script>
+
+</html>
