@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Edit and Remove Element</title>
+</head>
+<body style="background-color:#212121; color: #ffffff">
+    <ul class="language">
+        <li> JavaScript </li>
+    </ul>
+</body>
+<!--choice style below the body or inline style or cusotom-->
+<style>
+
+</style>
+
+<script>
+    // dom creation remove values here
+//design fn custom call it nd used what want
+//custom which var we pass that li create with text and append to ul
+//fn defination
+//basic method 
+function addLanguage(langname){
+    //create element
+    const li =  document.createElement('li');
+    li.innerHTML = langname;
+    //append mean above all tree traverse and go to end  sometime optimization fail
+    document.querySelector('.language').appendChild(li);
+
+}
+addLanguage('Python');
+addLanguage('TypeScript');
+//optimize approach method  not usd inner html used createtextnode
+//space save easy 
+function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    //edit  and remove
+    //nth child  like refer of that 
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //not optimized
+      //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    //replace with mean second language pyhton change with it 
+   secondLang.replaceWith(newli);
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    //outer html change mean give full value with tags and text
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();
+
+
+
+
+</script>
+</html>
