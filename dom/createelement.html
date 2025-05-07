@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Own Element</title>
+</head>
+<body style="background-color:#212121; color: #ffffff">
+   <!--used div here in script its in memory-->
+</body>
+<script>
+    //create own div element createElement also used with that name 
+    //any  name of variable 
+    const div =  document.createElement('div')
+    console.log(div);
+    //add property in that variable  class name id etc
+    div.className = "main";
+   // div.id = "myId";
+    //used math lib to add unique id also logic:
+//10 one digit move left add 1 not 0
+//random id generation and add to element
+div.id =Math.round( Math.random()*10+1);
+//attribute which are custom 
+//used method  any name with setattribute mthid
+div.setAttribute("title", "generatedtitle")
+//styling
+ div.style.backgroundColor = "green"
+    div.style.padding = "12px";
+    //not recommended override value
+    //div.innerText = "abcd";
+//preferable create textnode own instead of inner self node
+//its like inner text but create our own like creat element
+const addText = document.createTextNode("Hello User")
+
+div.appendChild(addText)
+//append it div to body so it run in web page 
+document.body.appendChild(div)
+ 
+</script>
+</html>
