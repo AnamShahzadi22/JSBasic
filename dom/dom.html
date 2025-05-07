@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tag and title in head -->
+    <!-- Attribute in meta tag: charset -->
+    <meta charset="UTF-8">
+    <!-- Text node is part of DOM learning -->
+    <title>DOM Learning</title>
+    <!-- style of title color of title-->
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+    <div>
+        <!-- Attribute like class = heading -->
+        <!-- Note: correct the closing tag for h1 -->
+        <h1 id="title" class="heading" style="color: blue">DOM Learning<span style="display : none"> test Text</span>
+        </h1>
+        <!--for query selector -->
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+
+    <script>
+        // DOM and events
+        // Events: button click, etc.
+
+        // DOM manipulation
+        // DOM = Document Object Model
+        // head, body, etc. are objects
+        //getelementbyid getelementbycllass queryselecter are all method to select html tags
+        // Understand document model structure before manipulation
+
+        // HTML node collections are not true arrays
+        //get element by id 
+        const title = document.getElementById("title")
+
+        //access classname or id anything  in attribute
+        //behind the scene consider class as className
+        document.getElementById("title").id
+
+        //text of h1
+        //all text used textContent hidden and visible
+        //only visiible then innerText
+        //inner html whole html with span tag
+
+        document.getElementById('title').textContent;
+        //support html tag
+        document.getElementById('title').innerHTML;
+        document.getElementById('title').innerText;
+        //selecter method one more : querySelector used in real project
+        //give me first h2 tag on that page 
+        document.querySelector('h2')
+        //also used to access the query with id with class
+        //#used for title and .used for class
+        document.querySelector('#title');
+        document.querySelector('.heading')
+        //also used with all css selector
+        //document.querySelector('input');
+        //  document.querySelector('input[type = "password"]')
+        //if we want more than one at  a time used all queryselctor
+        //give us node list  not an array not apply array method
+        document.querySelectorAll('ul');
+        const list =    document.querySelectorAll('ul');
+       //index same like array 
+        list[0].style.color = "green"
+        //foreach loop
+        list.forEach(function(item){
+            item.style.backgroundColor = "red";
+        })
+        //nodelist and html collection are not pure arrray 
+
+
+        // Accessing element by ID and modify it 
+        document.getElementById('title').innerText = 'Welcome Here';
+
+        //in getattribute tell which attribute we want
+        //pass key return value also setAttribute it override
+        //add multiple argument at a time two class etc
+        document.getElementById("title").getAttribute('id')
+        // You can also change style in script
+        document.getElementById('title').style.backgroundColor = "white";
+
+        document.getElementById('title').style.padding = "15px";
+//method for  converting nodelist to array
+//new method getelementbyclassname
+//also we get element by class name 
+    const tempList = document.getElementsByClassName('list-item')
+//give us htmlcollection it not support foreach
+//convert to array for looping
+
+ const convertedarry = Array.from(temList); //now we use loop
+
+
+
+
+    </script>
+
+</body>
+
+</html>
